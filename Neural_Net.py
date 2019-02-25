@@ -237,7 +237,7 @@ class Neural_Net:      #Defining the Class for the Neural_Net
         plt.plot(np.squeeze(costs)) #Plotting the cost function
         plt.ylabel('Cost')
         plt.xlabel('Epochs')
-        plt.title("Cost FUnction (Learning rate = " + str(self.learning_rate)+")")
+        plt.title("Cost Function (Learning rate = " + str(self.learning_rate)+")")
         plt.subplot(2, 1, 2)
         plt.plot(xaxis,trn_acc) #Plotting the training accuracies
         plt.plot(xaxis,tst_acc) #Plotting the test accuracies
