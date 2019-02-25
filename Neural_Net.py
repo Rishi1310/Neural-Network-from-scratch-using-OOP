@@ -1,12 +1,9 @@
 
-# coding: utf-8
-
 # ## Object Oriented Code for the Neural Net
 
-# In[17]:
-
-
 import numpy as np     #Importing this library to make computaion slightly faster
+
+# print("Sanity Check")
 
 ###START OF NEURON CLASS###
 class Neuron:     #Defining a Neuron Class that can only be called from inside the Layer Class
@@ -66,6 +63,8 @@ class Neuron:     #Defining a Neuron Class that can only be called from inside t
         return dw,db,dac_1
 ###END OF NEURON CLASS###
 
+# print("Sanity Check 2")
+
 ###START OF LAYER CLASS###
 class Layer:      #Defining a Layer class that can only be called from inside the Neural_Net Class
     def __init__(self, n_neurons): #Initialization block for the Layer Class. Takes the number of Neurons to be present as input.
@@ -92,6 +91,8 @@ class Layer:      #Defining a Layer class that can only be called from inside th
             dac_1s.append(temp3)
         return np.array(dws),np.array(dbs),np.array(dac_1s)
 ###END OF LAYER CLASS###
+
+# print("Sanity Check 3")
 
 ###START OF NEURAL_NET CLASS###
 class Neural_Net:      #Defining the Class for the Neural_Net
@@ -268,18 +269,21 @@ class Neural_Net:      #Defining the Class for the Neural_Net
         return preds,acc
 ###END OF NEURAL_NET CLASS### 
 
+# print("Sanity Check 4")
 
 # ## Importing and Preprocessing Data
 
-# In[18]:
-
-
 import pandas as pd
-import numpy as np
+
+# print("Sanity Check 5")
 
 import matplotlib.pyplot as plt
+
+# print("Sanity Check 6")
+
 import seaborn as sns
-get_ipython().run_line_magic('matplotlib', 'inline')
+
+print("C")
 
 data = pd.read_csv('./diabetes.csv')
 
@@ -296,11 +300,10 @@ X_train, X_test, y_train, y_test = train_test_split(inputs, outputs, test_size=0
 
 plt.rcParams['figure.figsize'] = (15.0, 12.0) # set default size of plots
 
-
-# In[19]:
-
-
+# ## Training the Network
 np.random.seed(10) #Setting a random seed for reproducability and sanity checks
+# print("A")
 net = Neural_Net([10,5]) #Creating a Neural_Net object
+# print("B")
 net.train(X_train,y_train,X_test,y_test,epochs=400,learning_rate=0.2,printCost=True,printEvery=1, printFrom = 0) #Training the Neural Network
 
